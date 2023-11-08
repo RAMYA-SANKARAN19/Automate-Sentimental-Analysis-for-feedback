@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sentimental Analysis Of Textual comments and Feedback</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      html {
+        height: 100%;
+
+
+      }
+
+      body {
+        height: 100%;
+        font-family: Arial;
+        margin: 0;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      form textarea {
+        width: 400px;
+        height: 150px;
+        border-radius: 3px;
+        border-color: black;
+        background-color:Tomato;
+        color:white;
+
+        padding: 2px 10px;
+        box-sizing: border-box;
+        min-width: 300px;
+        margin-top: 235px;
+        margin-left:985px;
+        font-size: 16px;
+      }
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+      form button {
+        width: 90px;
+        height: 38px;
+        margin-top: 20px;
+         margin-left:985px;
+        border-color: black;
+        background-color: OliveDrab;
+      }
+
+      form button:hover {
+        width: 90px;
+        height: 38px;
+        margin-top: 20px;
+        border-color: coral;
+        background-color: #e2661d;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+          0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .container {
+        height: 100%;
+        width:100%;
+        background-image:url('https://www.embedded-robotics.com/wp-content/uploads/2022/03/Sentiment-Analysis-using-LSTM-1024x465.png');
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        background-size:100% 100%;
+      }
+
+      .fa {
+        padding: 8px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 12px 10px;
+        margin-top: 23px;
+      }
+
+      .fa-twitter {
+        background: #55acee;
+        color: white;
+      }
+
+      .fa-google {
+        background: #dd4b39;
+        color: white;
+      }
+
+      .fa-linkedin {
+        background: #007bb5;
+        color: white;
+      }
+
+      .fa-github {
+        background: black;
+        color: white;
+      }
+
+      .header {
+        height: 50px;
+        margin-top: 0;
+        padding: 36px;
+
+        background-color:rgba(0,0,0,.1);
+        color: Teal;
+
+        font-size: 25px;
+      }
+      h1{
+      margin-left:100px;
+      margin-top: 0px;}
+      /* Page Content */
+      .content {
+
+
+      }
+
+      .footer {
+        background-color:rgba(0,0,0,.1);
+        height: 120px;
+        position: fixed;
+        width: 100%;
+        bottom: 0px;
+        text-align: center;
+      }
+
+      .predict {
+        margin-top: 22px;
+        margin-left:985px;
+        font-size: 25px;
+        text-align: center;-->
+      }
+
+      .copyright {
+        margin-top: 8px;
+        bottom: 0;
+        color: white;
+        background-color: black;
+        box-sizing: border-box;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Sentimental Analysis For Texts</h1>
+      </div>
+      <div class="content" >
+
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="form-group">
+          <textarea
+            name="Review"
+            placeholder="Enter your textual comments and Feedback here!.."
+            required="required"
+            cols="500"
+            rows="100"
+          ></textarea></div>
+
+          <button type="submit">
+            Predict
+          </button>
+        </form>
+        <div class="predict">
+          {{ prediction_text }}
+        </div>
+      </div>
+
+
+
+      </div>
+
+      <div class="footer">
+<!--        <a-->
+<!--          href=""-->
+<!--          class="fa fa-twitter"-->
+<!--          target="_black"-->
+<!--        ></a>-->
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=ramyasankaran19@gmail.com"
+          class="fa fa-google"
+          target="_black"
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/ramya-s-aa41b920a"
+          class="fa fa-linkedin"
+          target="_black"
+        ></a>
+<!--        <a-->
+<!--          href=""-->
+<!--          class="fa fa-github"-->
+<!--          target="_black"-->
+<!--        ></a>-->
+
+        <div class="copyright">
+          © Copyright 2023,All Rights Reserved | Ramya Sankaran
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
